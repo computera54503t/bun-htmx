@@ -1,20 +1,35 @@
-export function CardItem() {
+export function CardItem(props: {
+  title: string;
+  url?: string;
+  image?: string;
+}) {
+  const title = props.title;
+
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10">
-        <img
-          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-          className="rounded-xl"
-        />
+    <a
+      href={props.url || "#"}
+      target="_blank"
+      className="card w-44 sm:w-48 bg-base-100 shadow-xl"
+    >
+      <div
+        className={`badge badge-success badge-xs right-3 absolute top-3`}
+      ></div>
+
+      <figure className="px-3 pt-6 sm:px-6 sm:pt-6">
+        <div className="h-28 sm:h-32 flex items-center">
+          <img
+            src={
+              props.image ||
+              "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/selfhosted.png"
+            }
+            alt={title}
+            className="rounded-xl w-28 sm:w-32 "
+          />
+        </div>
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
+        <h2 className="text-lg sm:text-xl uppercase">{title}</h2>
       </div>
-    </div>
+    </a>
   );
 }
