@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { CardItem } from "./CardItem";
-import { Hero } from "./Hero";
 import { Layout } from "./Layout";
 import { CardList } from "./CardList";
 
@@ -10,7 +7,7 @@ export function HomePage() {
     <Layout title={title}>
       <div className="flex flex-col gap-8">
         <section className="text-center">
-          <p className="text-lg italic">
+          <p className="text-lg italic hidden sm:block">
             "True strength lies not in adding, but in discerning what must be
             removed."
           </p>
