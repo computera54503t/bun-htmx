@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ThemePicker } from "./ThemePicker";
 
 export function Layout({
   title,
@@ -8,7 +9,7 @@ export function Layout({
   children: ReactNode;
 }) {
   return (
-    <html className="h-full">
+    <html className="h-full" data-theme="dark">
       <head>
         <title>{title}</title>
         <meta
@@ -21,18 +22,19 @@ export function Layout({
         <script src="/htmx.js" defer></script>
       </head>
       <body className="h-full">
-        <main className="max-w-screen-md mx-auto flex flex-col gap-8">
-          <div className="w-full max-w-screen-md mx-auto">
+        <main className="max-w-screen-xl mx-auto flex flex-col gap-8">
+          <div className="w-full max-w-screen-xl mx-auto">
             <header className="w-full flex items-center p-8" hx-boost="true">
               <h1>
                 <a href="/" className="btn btn-secondary btn-outline">
-                  Hello Bun!
+                  Bun-Dash
                 </a>
               </h1>
               <nav className="ml-auto">
                 <a href="/about" className="btn btn-ghost">
                   About
                 </a>
+                {/* <ThemePicker /> */}
               </nav>
             </header>
           </div>

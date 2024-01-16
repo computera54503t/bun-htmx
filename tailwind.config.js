@@ -5,4 +5,7 @@ export default {
     colors: false,
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake", "retro", "synthwave"],
+  },
 };

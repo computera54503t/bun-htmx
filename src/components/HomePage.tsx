@@ -1,32 +1,22 @@
+import { CardItem } from "./CardItem";
 import { Hero } from "./Hero";
 import { Layout } from "./Layout";
 import { Loading } from "./Loading";
 
 export function HomePage() {
-  const title = "Hello Bun!";
+  const title = "Homelab Dashboard!";
   return (
     <Layout title={title}>
       <div className="flex flex-col gap-8">
-        <Hero title={title}>
-          <p className="text-lg">
-            This is an example of a Bun and it's built in HTTP server app using
-            TailwindCSS and DaisyUI.
+        <section className="text-center">
+          <p className="text-lg italic">
+            "True strength lies not in adding, but in discerning what must be
+            removed."
           </p>
-          <nav className="flex flex-col items-center gap-6 mx-auto">
-            <a
-              href="https://github.com/danawoodman/bun-htmx"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary"
-            >
-              Check Out the Code on GitHub
-            </a>
-            <a href="/about" className="btn btn-ghost" hx-boost="true">
-              About
-            </a>
-          </nav>
-        </Hero>
-
+        </section>
+        <section className="max-w-screen-xl w-full mx-auto flex flex-col gap-4 p-8 bg-base-200">
+          <CardItem />
+        </section>
         <section className="max-w-md mx-auto flex flex-col gap-4 p-8">
           <h2 className="uppercase text-xl">
             <strong>HTMX</strong>
